@@ -2,7 +2,59 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://default.style/">
 <title>deimage demo</title>
-<h2>Als plaatje</h2>
-<img src="../dist/deimage.svg" alt="">
-<h2>Als iframe</h2>
-<iframe src="../dist/deimage.svg" sandbox="allow-scripts"></iframe>
+<style>
+
+    svg:not(:root) {
+        display: block;
+    }
+
+    .resize {
+        resize: both;
+    }
+
+</style>
+<section>
+    <h2>Als plaatje</h2>
+    <figure>
+        <img src="../dist/deimage.svg" alt="">
+        <figcaption>Zonder expliciete hoogte en breedte</figcaption>
+    </figure>
+    <figure>
+        <img src="../dist/deimage.svg" alt="" height="256" width="256">
+        <figcaption>Met expliciete hoogte en breedte</figcaption>
+    </figure>
+    <figure>
+        <img src="../dist/deimage.svg" alt="" height="256" width="256" class="resize">
+        <figcaption>Met interactief schalen</figcaption>
+    </figure>
+</section>
+<section>
+    <h2>Als iframe</h2>
+    <figure>
+        <iframe src="../dist/deimage.svg"></iframe>
+        <figcaption>Zonder expliciete hoogte en breedte</figcaption>
+    </figure>
+    <figure>
+        <iframe src="../dist/deimage.svg" height="256" width="256"></iframe>
+        <figcaption>Met expliciete hoogte en breedte</figcaption>
+    </figure>
+    <figure>
+        <iframe src="../dist/deimage.svg" height="256" width="256" class="resize"></iframe>
+        <figcaption>Met interactief schalen</figcaption>
+    </figure>
+</section>
+<section>
+    <h2>Als object</h2>
+    <figure>
+        <object data="../dist/deimage.svg"></object>
+        <figcaption>Zonder expliciete hoogte en breedte</figcaption>
+    </figure>
+    <figure>
+        <object data="../dist/deimage.svg" height="256" width="256"></object>
+        <figcaption>Met expliciete hoogte en breedte</figcaption>
+    </figure>
+    <figure>
+        <object data="../dist/deimage.svg" height="256" width="256" class="resize"></object>
+        <figcaption>Met interactief schalen</figcaption>
+    </figure>
+</section>
