@@ -18,6 +18,8 @@ Daarom hebben we een afbeelding ontwikkeld die je elke willekeurige afmeting kun
 
 ## Gebruik
 
+Download [het bestand](https://hetcdn.nl/deidee/images/deimage.svg), of laad het direct in vanaf ons CDN:
+
 ```html
 <img alt="" src="https://hetcdn.nl/deidee/images/deimage.svg">
 ```
@@ -26,4 +28,30 @@ Je kunt de afbeelding zelfs dynamisch de afmetingen laten tonen, maar dan moet j
 
 ```html
 <iframe src="https://hetcdn.nl/deidee/images/deimage.svg"></iframe>
+```
+
+## Aanpassen
+
+Staan de kleuren je niet aan? Download [het bestand](https://hetcdn.nl/deidee/images/deimage.svg) en pas de waarden voor ``stroke`` en `fill` aan:
+
+```svg
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 300 300" preserveAspectRatio="none">
+        <rect fill="gainsboro" stroke="gray" stroke-width="2" width="300" height="300" vector-effect="non-scaling-stroke" />
+        <line x1="0" y1="0" x2="300" y2="300" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" />
+        <line x1="0" y1="300" x2="300" y2="0" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" />
+    </svg>
+    <svg viewBox="0 0 300 300" preserveAspectRatio="xMinYMid meet">
+        <text fill="dimgray" id="dimensions" x="20" y="35" textLength="6em" />
+    </svg>
+    <script type="text/javascript"><![CDATA[
+    const dimensions = document.getElementById('dimensions');
+
+    window.onload = window.onresize = function() {
+        dimensions.textContent = window.innerWidth + ' × ' + window.innerHeight ;
+    }
+
+    ]]></script>
+</svg>
 ```
